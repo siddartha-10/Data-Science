@@ -1,29 +1,16 @@
-<!DOCTYPE html>
-<html lang="en" >
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <title>Review Page</title>
+{% block head %}
+    <title>Admission Prediction Results</title>
+{% endblock %}
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+{% block body %}
+<div class="content">
+    <h2>Admission Prediction Results</h2>
 
-
-      <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-
-</head>
-
-<body>
-
-  <div class="table-users">
-   <div class="header">Prediction</div>
-
-      <p>Your chance for admission is {{prediction}} percent</p>
+    <div class="result">
+        <p>Your chance of admission is <span class="prediction">{{prediction}}%</span></p>
+        <p>Good luck with your application!</p>
+    </div>
 </div>
-
-
-
-</body>
-
-</html>
+{% endblock %}

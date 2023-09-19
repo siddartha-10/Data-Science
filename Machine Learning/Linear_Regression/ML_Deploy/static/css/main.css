@@ -1,35 +1,75 @@
+/* Reset some default styles */
 body, html {
     margin: 0;
-    font-family: sans-serif;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-.content {
-    margin: 0 auto;
-    width: 400px;
-}
-
-table, td, th {
-    border: 1px solid #aaa;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th {
-    height: 30px;
-}
-
-td {
+/* Header styles */
+header {
+    background-color: #327a81;
+    color: white;
     text-align: center;
-    padding: 5px;
+    padding: 1rem;
+    font-size: 1.5em;
+    text-transform: uppercase;
 }
 
+/* Main content container */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f7fa; /* Updated background color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
 .form {
+    text-align: center;
     margin-top: 20px;
 }
 
-#content {
-    width: 70%;
+.form h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.form input[type="number"],
+.form select,
+.form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form input[type="submit"] {
+    background-color: #327a81;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #1c4d53;
+}
+
+/* Result styles */
+.result {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.result p {
+    font-size: 1.2em;
+}
+
+.prediction {
+    font-weight: bold;
+    color: #327a81;
+    font-size: 1.5em;
 }
