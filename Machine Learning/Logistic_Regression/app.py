@@ -26,10 +26,27 @@ def index():
 @app.route("/predict", methods=['POST'])
 def predictRoute():
     try:
-        data = request.form.to_dict()
+        # Extract form data as floats
+        data = {
+            'Pregnancies': float(request.form['pregnancies']),
+            'Glucose': float(request.form['glucose']),
+            'BloodPressure': float(request.form['bloodPressure']),
+            'SkinThickness': float(request.form['skinThickness']),
+            'Insulin': float(request.form['insulin']),
+            'BMI': float(request.form['bmi']),
+            'DiabetesPedigreeFunction': float(request.form['diabetesPedigree']),
+            'Age': float(request.form['age'])
+        }
+
+        # Create a DataFrame from the input data
         data_df = pd.DataFrame([data])
+
+        # Scale the data using the loaded StandardScaler
         scaled_data = scalar.transform(data_df)
+
+        # Make a prediction using the loaded model
         predict = model.predict(scaled_data)
+
         if predict[0] == 1:
             result = 'Diabetic'
         else:
