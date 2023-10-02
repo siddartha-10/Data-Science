@@ -1,12 +1,13 @@
+/* style.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -21,7 +22,7 @@ h1 {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 label {
@@ -56,12 +57,4 @@ button:hover {
     font-weight: bold;
     font-size: 24px;
     text-align: center;
-}
-
-.green {
-    color: green;
-}
-
-.red {
-    color: red;
 }
