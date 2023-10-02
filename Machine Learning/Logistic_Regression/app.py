@@ -30,7 +30,13 @@ def predictRoute():
         # Extract form data as floats
         data = {
             'Pregnancies': float(request.form['pregnancies']),
-            # Include other form fields here
+            'Glucose': float(request.form['glucose']),
+            'BloodPressure': float(request.form['bloodPressure']),
+            'SkinThickness': float(request.form['skinThickness']),
+            'Insulin': float(request.form['insulin']),
+            'BMI': float(request.form['bmi']),
+            'DiabetesPedigreeFunction': float(request.form['diabetesPedigree']),
+            'Age': float(request.form['age'])
         }
 
         # Create a DataFrame from the input data
