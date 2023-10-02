@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(result => {
             // Display the result with the appropriate color
             resultDiv.innerText = result;
-            resultDiv.className = result === 'Non-Diabetic' ? 'result green' : 'result red';
+            resultDiv.className = result === 'Diabetic' ? 'result red' : 'result green';
         })
         .catch(error => {
             console.error('Error:', error);
