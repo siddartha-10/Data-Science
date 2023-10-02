@@ -5,20 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Get form values
+        // Get form data
         const formData = new FormData(form);
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = parseFloat(value);
-        });
 
-        // Make a POST request to your Flask server
+        // Make a POST request to your Flask server with form data
         fetch('/predict', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ data }),
+            body: formData,
         })
         .then(response => response.text())
         .then(result => {

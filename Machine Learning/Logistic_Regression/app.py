@@ -24,18 +24,13 @@ def index():
     return render_template('index.html')
 
 @app.route("/predict", methods=['POST'])
+#@app.route("/predict", methods=['POST'])
 def predictRoute():
     try:
         # Extract form data as floats
         data = {
             'Pregnancies': float(request.form['pregnancies']),
-            'Glucose': float(request.form['glucose']),
-            'BloodPressure': float(request.form['bloodPressure']),
-            'SkinThickness': float(request.form['skinThickness']),
-            'Insulin': float(request.form['insulin']),
-            'BMI': float(request.form['bmi']),
-            'DiabetesPedigreeFunction': float(request.form['diabetesPedigree']),
-            'Age': float(request.form['age'])
+            # Include other form fields here
         }
 
         # Create a DataFrame from the input data
@@ -56,6 +51,7 @@ def predictRoute():
     except Exception as e:
         print('exception is', e)
         return str(e)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
